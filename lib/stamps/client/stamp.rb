@@ -33,6 +33,13 @@ module Stamps
         response[:errors].empty? ? response[:create_indicium_response] : response
       end
 
+      def create_envelope!(params = {})
+        params[:authenticator] = authenticator_token unless params[:authenticator]
+        params[:from] ||= Hash.new
+        response = request('CreateEnvelopeIndicium', Stamps::Mapping::Stamp.new(params))
+        response[:errors].empty? ? response[:create_envelope_indicium_response] : response
+      end
+
       # Refunds postage and voids the shipping label
       #
       # @param [Hash] authenticator

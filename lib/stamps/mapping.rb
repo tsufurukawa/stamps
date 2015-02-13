@@ -60,6 +60,7 @@ module Stamps
       property :Width,                   :from => :width
       property :Height,                  :from => :height
       property :ShipDate,                :from => :ship_date
+      property :DeliveryDate,            :from => :delivery_date
       property :InsuredValue,            :from => :insured_value
       property :RegisteredValue,         :from => :registration_value
       property :CODValue,                :from => :cod_value
@@ -160,6 +161,10 @@ module Stamps
       def customs=(val)
         self[:Customs] = Customs.new(val)
       end
+    end
+
+
+    class StampEnvelope < Stamp
     end
 
     class Address < Hashie::Trash
