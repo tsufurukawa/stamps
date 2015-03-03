@@ -137,6 +137,7 @@ module Stamps
       property :nonDeliveryOption,                    :from => :non_delivery_option
       property :ReturnImageData,                      :from => :return_image_data
       property :printInstructions,                    :from => :print_instructions
+      property :PaperSize,                            :from => :paper_size
 
       # Maps :from to Address map
       def from=(val)
